@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airdrops VS Donuts Decimal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+            <div class="app-title">
+                <img src="img/logo.png" alt="Logo" class="logo">
+                <span>Airdrops VS Donuts Decimal</span>
+            </div>
+            <div class="menu-btn"><i class="fas fa-ellipsis-v"></i></div>
+        </header>
+
+        <main class="app-content">
+            <section class="menu-section">
+                <a href="#" class="menu-item">
+                    <div class="menu-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="menu-text">Каналы</div>
+                    <div class="menu-arrow"><i class="fas fa-chevron-right"></i></div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="menu-text">Валюты</div>
+                    <div class="menu-arrow"><i class="fas fa-chevron-right"></i></div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-icon"><i class="fas fa-coins"></i></div>
+                    <div class="menu-text">Монеты</div>
+                    <div class="menu-arrow"><i class="fas fa-chevron-right"></i></div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="menu-text">Сети</div>
+                    <div class="menu-arrow"><i class="fas fa-chevron-right"></i></div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-icon"><i class="fas fa-heart"></i></div>
+                    <div class="menu-text">Благотворительность</div>
+                    <div class="menu-arrow"><i class="fas fa-chevron-right"></i></div>
+                </a>
+            </section>
+
+            <!-- Donation Modal -->
+            <div class="modal" id="donationModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Аирдроп за Донат</h2>
+                        <span class="close-modal"><i class="fas fa-times"></i></span>
+                    </div>
+                    <div class="modal-body">
+                        <p class="modal-description">Поддержи проект и получи Аирдроп</p>
+                        
+                        <div class="input-group">
+                            <label>Тип доната</label>
+                            <div class="select-wrapper">
+                                <select>
+                                    <option>Аирдроп за Донат</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Сумма доната</label>
+                            <div class="amount-input">
+                                <input type="number" placeholder="0" min="0">
+                                <span class="currency">RUB</span>
+                            </div>
+                        </div>
+
+                        <div class="quick-amounts">
+                            <button class="amount-btn">₽250</button>
+                            <button class="amount-btn">₽500</button>
+                            <button class="amount-btn">₽1000</button>
+                            <button class="amount-btn">₽5000</button>
+                            <button class="amount-btn">₽10000</button>
+                            <button class="amount-btn disabled">₽30000</button>
+                        </div>
+
+                        <button class="continue-btn">Продолжить</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method Modal -->
+            <div class="modal" id="paymentMethodModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="user-info">
+                            <img src="img/user.png" alt="User" class="user-avatar">
+                            <h2>Дмитрий Макаровский</h2>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Аирдроп за Донат</h2>
+                        <p class="modal-description">Поддержи проект и получи Аирдроп</p>
+                        
+                        <h3>Способ оплаты</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method active">
+                                <img src="img/sbp.png" alt="СБП">
+                                <span>Система Быстрых Платежей</span>
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="payment-method">
+                                <img src="img/card.png" alt="Card">
+                                <span>Банковская карта</span>
+                            </div>
+                            <div class="payment-method">
+                                <img src="img/qr.png" alt="QR">
+                                <span>Оплата по QR</span>
+                            </div>
+                        </div>
+
+                        <button class="pay-btn">Оплатить 100 RUB</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Channel Modal -->
+            <div class="modal" id="channelModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Подключить свой канал</h2>
+                        <span class="close-modal"><i class="fas fa-times"></i></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <label>Название канала</label>
+                            <input type="text" placeholder="Введите название канала">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Описание канала</label>
+                            <textarea placeholder="Введите краткое описание канала"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Ссылка на канал</label>
+                            <input type="text" placeholder="https://t.me/channel">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Контакт для связи</label>
+                            <input type="text" placeholder="@username">
+                        </div>
+
+                        <div class="input-group checkbox">
+                            <label>Кнопки под всеми постами</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <button class="submit-btn">Отправить заявку</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charity Modal -->
+            <div class="modal" id="charityModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Заявка на благотворительность</h2>
+                        <span class="close-modal"><i class="fas fa-times"></i></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <label>ФИО заявителя</label>
+                            <input type="text" placeholder="Иванов Иван Иванович">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Дата рождения заявителя</label>
+                            <input type="text" placeholder="15.02.1980">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Номер телефона заявителя</label>
+                            <input type="text" placeholder="+7 (900) 123-45-67">
+                        </div>
+
+                        <div class="input-group">
+                            <label>ФИО нуждающегося</label>
+                            <input type="text" placeholder="Иванов Иван Иванович">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Дата рождения нуждающегося</label>
+                            <input type="text" placeholder="15.02.1980">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Номер телефона нуждающегося</label>
+                            <input type="text" placeholder="+7 (900) 123-45-67">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Описание проблемы</label>
+                            <textarea placeholder="Опишите вашу проблему"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Требуемая сумма</label>
+                            <div class="amount-input">
+                                <input type="number" placeholder="1000000" min="0">
+                                <span class="currency">RUB</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Подтверждающие документы и фотографии</label>
+                            <button class="upload-btn">Загрузить файл</button>
+                        </div>
+
+                        <button class="submit-btn">Отправить заявку</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Tab -->
+            <div class="tab" id="statisticsTab">
+                <div class="tab-header">
+                    <button class="tab-btn active">Статистика</button>
+                    <button class="tab-btn">Настройки</button>
+                </div>
+                
+                <div class="user-link">
+                    <label>Ваша партнерская ссылка</label>
+                    <div class="link-container">
+                        <input type="text" value="https://t.me/ProjectXDecimalBOT/app?startapp=297810833" readonly>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+
+                <div class="subscription-info">
+                    <div>
+                        <label>Ваша подписка</label>
+                        <div class="user-channel">
+                            <label>Ваш канал</label>
+                        </div>
+                    </div>
+                    <div class="sub-badge">
+                        <span class="price">120000 ₽</span>
+                        <span class="bonus">10% x5</span>
+                    </div>
+                </div>
+
+                <div class="channel-info">
+                    <div class="user-avatar-container">
+                        <img src="img/user.png" alt="User" class="channel-avatar">
+                        <div class="channel-details">
+                            <span class="channel-name">Дмитрий Макаровский</span>
+                            <span class="channel-username">@Makarovsky777</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
+                <div class="expiry-info">
+                    <label>Срок действия до</label>
+                    <span class="expiry-date">31 Дек 2025 23:59:59</span>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <label>Всего получено AIRDROP'S</label>
+                        <span class="stat-value">15063.44 ₽</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>Заработано AIRDROP'S</label>
+                        <span class="stat-value">14624.73 ₽</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>Подписок у вас в команде</label>
+                        <span class="stat-value">154 шт</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>Отписок всего</label>
+                        <span class="stat-value">0 шт</span>
+                    </div>
+                </div>
+
+                <div class="transaction-tabs">
+                    <button class="transaction-tab active">Начисления</button>
+                    <button class="transaction-tab">Платежи</button>
+                </div>
+
+                <div class="transaction-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon referral"><i class="fas fa-users"></i></div>
+                        <div class="transaction-details">
+                            <div class="transaction-title">Реферальный бонус</div>
+                            <div class="transaction-date">14 Май 2025 13:25:02</div>
+                        </div>
+                        <div class="transaction-amount">495.9333 DEL</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon airdrop"><i class="fas fa-parachute-box"></i></div>
+                        <div class="transaction-details">
+                            <div class="transaction-title">Аирдроп</div>
+                            <div class="transaction-date">13 Май 2025 16:28:37</div>
+                        </div>
+                        <div class="transaction-amount">1028.6066 DEL</div>
+                    </div>
+                    <!-- More transaction items would go here -->
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab" id="profileTab">
+                <div class="profile-header">
+                    <div class="actions">
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-trophy"></i>
+                            <span>Подключить свой канал</span>
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-coins"></i>
+                            <span>Создать себе токен</span>
+                        </a>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <img src="img/user.png" alt="User" class="profile-avatar">
+                        <h2>Дмитрий Макаровский</h2>
+                        <div class="profile-description">
+                            <p><i class="fas fa-money-bill"></i> Авторский контент о крипте и деньгах</p>
+                            <p><i class="fas fa-lightbulb"></i> Трендовые новости и полезные советы</p>
+                            <p><i class="fas fa-gift"></i> Получай Аирдроп криптовалют на канале</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <a href="#" class="action-btn primary">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Аирдроп за Донат</span>
+                        </a>
+                        <a href="#" class="action-btn">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Партнер Донат</span>
+                        </a>
+                        <a href="#" class="action-btn disabled">
+                            <i class="fas fa-bell"></i>
+                            <span>Подписаться</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="status-section">
+                    <h3>Купить статус</h3>
+                    <p class="empty-text">отсутствуют</p>
+                </div>
+
+                <div class="charity-section">
+                    <h3>Благотворительность</h3>
+                    <button class="charity-btn">
+                        <i class="fas fa-heart"></i>
+                        Подать заявку на помощь
+                    </button>
+                    <p class="empty-text">отсутствуют</p>
+                </div>
+
+                <div class="channel-rating">
+                    <div class="rating-header">
+                        <h3>Рейтинг ТОП-3 активных каналов</h3>
+                        <a href="#" class="view-all">Смотреть все</a>
+                    </div>
+                    <div class="top-channels">
+                        <div class="channel-card">
+                            <img src="img/digital-loto.png" alt="DigitalLoto" class="channel-logo">
+                            <span class="channel-name">DigitalLoto</span>
+                        </div>
+                        <div class="channel-card">
+                            <img src="img/user.png" alt="Дмитрий Макаровский" class="channel-logo">
+                            <span class="channel-name">Дмитрий Макаровский</span>
+                        </div>
+                        <div class="channel-card">
+                            <img src="img/byacademy.png" alt="BYAcademy" class="channel-logo">
+                            <span class="channel-name">BYAcademy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ratings Tab -->
+            <div class="tab" id="ratingsTab">
+                <h2>Рейтинг каналов</h2>
+                <div class="rating-list">
+                    <div class="rating-item">
+                        <div class="rating-position">1.</div>
+                        <div class="rating-user">
+                            <img src="img/user.png" alt="User" class="rating-avatar">
+                            <span>Дмитрий Макаровский</span>
+                        </div>
+                        <div class="rating-value">
+                            <span>6560</span>
+                            <small>Рейтинг</small>
+                        </div>
+                    </div>
+                    <div class="rating-item">
+                        <div class="rating-position">2.</div>
+                        <div class="rating-user">
+                            <img src="img/byacademy.png" alt="BYAcademy" class="rating-avatar">
+                            <span>BYAcademy</span>
+                        </div>
+                        <div class="rating-value">
+                            <span>5000</span>
+                            <small>Рейтинг</small>
+                        </div>
+                    </div>
+                    <!-- More rating items would go here -->
+                </div>
+            </div>
+
+            <!-- Transaction History Tab -->
+            <div class="tab" id="transactionHistoryTab">
+                <h2>Статистика</h2>
+                <div class="stats-summary">
+                    <div class="stat-summary-item">
+                        <label>Сумма платежей:</label>
+                        <span>965865 RUB</span>
+                    </div>
+                    <div class="stat-summary-item">
+                        <label>Доход:</label>
+                        <span>115789.9091 DEL</span>
+                    </div>
+                </div>
+
+                <h3>История транзакций</h3>
+                <div class="detailed-transaction-list">
+                    <div class="transaction-item">
+                        <div class="transaction-user">
+                            <img src="img/user.png" alt="User" class="transaction-avatar">
+                            <div class="transaction-details">
+                                <div class="transaction-title">Дмитрий Макаровский</div>
+                                <div class="transaction-date">14 Май 2025 17:56:13</div>
+                            </div>
+                        </div>
+                        <div class="transaction-info">
+                            <div class="transaction-amount">100 RUB</div>
+                            <div class="transaction-type">Аирдроп за Донат</div>
+                            <div class="transaction-status"><i class="far fa-circle"></i></div>
+                        </div>
+                    </div>
+                    <!-- More detailed transaction items would go here -->
+                </div>
+            </div>
+        </main>
+
+        <nav class="app-nav">
+            <a href="#" class="nav-item active" data-tab="channel">
+                <i class="fas fa-bullhorn"></i>
+                <span>Канал</span>
+            </a>
+            <a href="#" class="nav-item" data-tab="support">
+                <i class="fas fa-bell"></i>
+                <span>Поддержка</span>
+            </a>
+            <a href="#" class="nav-item" data-tab="profile">
+                <i class="fas fa-user"></i>
+                <span>Профиль</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

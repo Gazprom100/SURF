@@ -1,0 +1,862 @@
+/* Main Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.app-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-btn, .menu-btn {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    width: 30px;
+}
+
+.app-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #ffb6c1; /* Placeholder background */
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #4285f4;
+    margin-right: 10px;
+}
+
+.menu-text {
+    flex: 1;
+    font-size: 16px;
+}
+
+.menu-arrow {
+    color: #999;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.close-modal {
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-description {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4285f4;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper:after {
+    content: '▼';
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+.amount-input {
+    position: relative;
+}
+
+.amount-input input {
+    padding-right: 50px;
+}
+
+.currency {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #999;
+}
+
+.quick-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.amount-btn {
+    flex-basis: calc(33.333% - 10px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+.amount-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.continue-btn, .pay-btn, .submit-btn, .upload-btn, .charity-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.upload-btn {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
+    text-transform: none;
+}
+
+.charity-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285f4;
+    margin-bottom: 10px;
+}
+
+.charity-btn i {
+    margin-right: 10px;
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.payment-method img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.payment-method span {
+    flex: 1;
+}
+
+.payment-method.active {
+    border-color: #4285f4;
+}
+
+.payment-method.active i {
+    color: #4285f4;
+}
+
+/* Checkbox Switch */
+.checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4285f4;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Statistics Tab */
+.tab {
+    display: none; /* Hide all tabs by default */
+    padding: 15px;
+}
+
+#statisticsTab {
+    display: block; /* Show the first tab by default */
+}
+
+.tab-header {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    color: #4285f4;
+    border-bottom-color: #4285f4;
+}
+
+.user-link, .subscription-info, .channel-info, .expiry-info {
+    margin-bottom: 20px;
+}
+
+.user-link label, .subscription-info label, .expiry-info label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4285f4;
+    font-weight: 500;
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.link-container input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    font-size: 14px;
+}
+
+.copy-btn {
+    padding: 12px;
+    background: none;
+    border: none;
+    color: #4285f4;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.subscription-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-badge {
+    background-color: #ffd700;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bonus {
+    display: block;
+    font-size: 14px;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user-avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.channel-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.channel-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-name {
+    font-weight: 500;
+}
+
+.channel-username {
+    color: #4285f4;
+    font-size: 14px;
+}
+
+.expiry-date {
+    font-weight: 500;
+}
+
+.stats-container {
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item label {
+    color: #666;
+}
+
+.stat-value {
+    font-weight: 500;
+}
+
+.transaction-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.transaction-tab {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+}
+
+.transaction-tab.active {
+    background-color: #fff;
+    color: #333;
+}
+
+.transaction-list {
+    margin-bottom: 20px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.transaction-icon.referral {
+    background-color: #ff5252;
+}
+
+.transaction-icon.airdrop {
+    background-color: #4285f4;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-title {
+    font-weight: 500;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.transaction-amount {
+    font-weight: 500;
+}
+
+/* Profile Tab */
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    flex: 1;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.action-btn i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #4285f4;
+}
+
+.action-btn.primary {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.action-btn.primary i {
+    color: #fff;
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.profile-description {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.profile-description p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.profile-description i {
+    width: 20px;
+    color: #4285f4;
+}
+
+.profile-actions {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.status-section, .charity-section, .channel-rating {
+    margin-bottom: 20px;
+}
+
+.status-section h3, .charity-section h3, .channel-rating h3 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.empty-text {
+    color: #999;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.rating-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.view-all {
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.top-channels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.channel-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.channel-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.channel-name {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Ratings Tab */
+.rating-list {
+    margin-top: 20px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.rating-position {
+    width: 30px;
+    font-weight: bold;
+    color: #4285f4;
+}
+
+.rating-user {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.rating-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.rating-value {
+    text-align: right;
+}
+
+.rating-value span {
+    display: block;
+    font-weight: bold;
+}
+
+.rating-value small {
+    color: #999;
+}
+
+/* Transaction History Tab */
+.stats-summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.stat-summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.stat-summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-summary-item label {
+    font-weight: 500;
+}
+
+.detailed-transaction-list {
+    margin-top: 20px;
+}
+
+.transaction-user {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.transaction-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #f5f5f5; /* Placeholder background */
+}
+
+.transaction-info {
+    text-align: right;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-type {
+    font-size: 12px;
+    color: #666;
+}
+
+.transaction-status {
+    margin-top: 5px;
+}
+
+.transaction-status i.fa-circle {
+    color: #ddd;
+}
+
+.transaction-status i.fa-check-circle {
+    color: #4caf50;
+}
+
+/* Navigation */
+.app-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    z-index: 100;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    flex: 1;
+    color: #999;
+    text-decoration: none;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: #4285f4;
+}
+
+/* For demo purposes - show all tabs and modals */
+#donationModal, #paymentMethodModal, #channelModal, #charityModal {
+    display: none; /* Hide all modals by default */
+}
+
+/* Uncomment to show specific modal or tab for development
+#donationModal {
+    display: block;
+}
+*/
+
+#statisticsTab, #profileTab, #ratingsTab, #transactionHistoryTab {
+    display: none; /* Hide all tabs by default */
+}
+
+/* Show one tab for development */
+#profileTab {
+    display: block;
+} 
