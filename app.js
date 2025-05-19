@@ -193,6 +193,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Обработчики для новых кнопок профиля
+    document.querySelectorAll('.profile-action-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (btn.classList.contains('disabled')) return;
+            if (btn.classList.contains('primary')) {
+                showModal('donationModal');
+            } else if (btn.textContent.includes('Партнер Донат')) {
+                showModal('paymentMethodModal');
+            }
+        });
+    });
+    document.querySelectorAll('.charity-btn-new').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            showModal('charityModal');
+        });
+    });
+    document.querySelectorAll('.side-card.channel-card-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            showModal('channelModal');
+        });
+    });
+    
     // Helper Functions
     function hideAllTabs() {
         // Hide menu section
